@@ -1,0 +1,11 @@
+{
+  "name": "meltline-glacial-hazard-intelligence",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MELTLINE — interactive glacial hazard intelligence frontend prototype",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "check": "node --check app.js"
+  }
+}
