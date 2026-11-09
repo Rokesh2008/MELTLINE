@@ -12,6 +12,8 @@ npm start
 
 Open http://localhost:4173.
 
+You can also open `index.html` directly, but the local server is recommended because it serves the compressed application assets and SVG files with the expected paths.
+
 ## What is implemented
 
 - Public landing page, sign-in, registration, password recovery and first-time workspace setup.
@@ -30,17 +32,16 @@ Open http://localhost:4173.
 
 This repository is the **front-end prototype**, not the operational scientific system. It uses clearly labelled demonstration fixtures and custom SVG cartographic illustrations. It does not yet connect to Copernicus, NASA GPM, ERA5, PostGIS, LangGraph, Celery, MinIO or HEC-RAS. It does not calculate actual GLOF risk, issue warnings or run hydraulic simulations. The UI intentionally displays “not connected”/“demo” states where a real service is required.
 
-## Source files
+The real-data implementation should follow the MELTLINE Complete Application Blueprint: start with reproducible South Lhonak satellite ingestion and lake-boundary validation, then terrain/HEC-RAS workflows, then agent orchestration and impact assessment.
 
-For static deployment, `app.js.gz` and `styles.css.gz` are decompressed in the browser by `bootstrap.js`. To inspect or edit the readable sources after cloning:
+## Source files and static runtime
 
-```bash
-gunzip -k app.js.gz
-gunzip -k styles.css.gz
-```
-
-Use a recent browser with the standard `DecompressionStream` API.
+The GitHub Pages repository stores the runtime as `app.js.gz` and `styles.css.gz`; `bootstrap.js` decompresses these in the browser using the standard `DecompressionStream` API. The downloadable source ZIP includes both readable files (`app.js`, `styles.css`) and their compressed deployment copies. Use a recent version of Chrome, Edge, Firefox or Safari.
 
 ## Deployment
 
-This is a static site and can be hosted on GitHub Pages, Cloudflare Pages, Netlify or any static web host. For GitHub Pages, set the Pages deployment source to **GitHub Actions**. The included workflow deploys the repository root on pushes to `main`. See `docs/GITHUB_SETUP.md`.
+GitHub repository: https://github.com/Rokesh2008/MELTLINE
+
+Live site: https://rokesh2008.github.io/MELTLINE/
+
+The GitHub Pages deployment is configured to use **GitHub Actions**. The included workflow deploys the repository root on pushes to `main` and enables Pages on first deployment. See `docs/GITHUB_SETUP.md`.
