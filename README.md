@@ -30,7 +30,16 @@ Open http://localhost:4173.
 
 This repository is the **front-end prototype**, not the operational scientific system. It uses clearly labelled demonstration fixtures and custom SVG cartographic illustrations. It does not yet connect to Copernicus, NASA GPM, ERA5, PostGIS, LangGraph, Celery, MinIO or HEC-RAS. It does not calculate actual GLOF risk, issue warnings or run hydraulic simulations. The UI intentionally displays “not connected”/“demo” states where a real service is required.
 
-The real-data implementation should follow the MELTLINE Complete Application Blueprint: start with reproducible South Lhonak satellite ingestion and lake-boundary validation, then terrain/HEC-RAS workflows, then agent orchestration and impact assessment.
+## Source files
+
+For static deployment, `app.js.gz` and `styles.css.gz` are decompressed in the browser by `bootstrap.js`. To inspect or edit the readable sources after cloning:
+
+```bash
+gunzip -k app.js.gz
+gunzip -k styles.css.gz
+```
+
+Use a recent browser with the standard `DecompressionStream` API.
 
 ## Deployment
 
